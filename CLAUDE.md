@@ -2,20 +2,57 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Project Status
+## Project Overview
 
-This appears to be a new or empty project directory. As the codebase develops, this file should be updated with:
+Azure development environment with Node.js and Azure SDK integration.
 
 ## Development Commands
 
-*To be added when build system is established*
+```bash
+# Install dependencies
+npm install
 
-## Architecture Overview
+# Start development server
+npm run dev
 
-*To be documented as the project structure emerges*
+# Run tests
+npm test
+npm run test:watch
+
+# Code quality
+npm run lint
+npm run format
+
+# Azure CLI commands
+az login
+az account set --subscription <subscription-id>
+```
+
+## Project Structure
+
+- `src/config/` - Azure configuration and credentials
+- `src/services/` - Azure service integrations
+- `src/utils/` - Utility functions
+- `tests/` - Test files
+
+## Environment Setup
+
+1. Copy `.env.example` to `.env`
+2. Fill in Azure credentials and configuration
+3. Run `az login` to authenticate with Azure CLI
+4. Install dependencies with `npm install`
+
+## Azure Services Configured
+
+- Azure Identity (DefaultAzureCredential)
+- Blob Storage
+- Cosmos DB
+- Service Bus
+- Key Vault
+- ARM Resources
 
 ## Important Notes
 
-- This is currently an empty repository
-- Update this file as the project structure and tooling are established
-- Include build, test, and development commands once they are configured
+- Never commit `.env` files or secrets
+- Use Azure Key Vault for production secrets
+- DefaultAzureCredential handles authentication automatically
